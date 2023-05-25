@@ -54,6 +54,10 @@ tasks.named('compileJava') {
 		memoryMaximumSize = '4g'
 	}
 }
+tasks.withType(JavaCompile) {
+	options.fork = true
+	options.forkOptions.memoryMaximumSize = "4g" // Aumentar el tamaño según sea necesario, ej: "4g", "8g", etc.
+}
 
 tasks.named('compileTestJava') {
 	options.forkOptions.with {
