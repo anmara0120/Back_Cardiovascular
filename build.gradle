@@ -48,3 +48,15 @@ sonarqube {
 		property "sonar.login", "6cfdc1ef0a0b7efcb77479432020de074b0ef981"
 	}
 }
+
+tasks.named('compileJava') {
+	options.forkOptions.with {
+		memoryMaximumSize = '4g'
+	}
+}
+
+tasks.named('compileTestJava') {
+	options.forkOptions.with {
+		memoryMaximumSize = '4g'
+	}
+}
