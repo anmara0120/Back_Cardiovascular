@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
+    env:
+      GRADLE_OPTS: -Xmx4g
     steps:
       - uses: actions/checkout@v3
         with:
@@ -36,4 +38,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew -Xmx4g build sonarqube --info
+        run: ./gradlew build sonarqube --info
