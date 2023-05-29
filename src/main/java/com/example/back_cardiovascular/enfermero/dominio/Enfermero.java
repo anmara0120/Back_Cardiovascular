@@ -4,10 +4,6 @@ import com.example.back_cardiovascular.cita.dominio.Cita;
 import com.example.back_cardiovascular.historia_clinica.HistoriaClinica;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
@@ -36,7 +32,7 @@ public class Enfermero {
     @Column(unique = true)
     private String identificacion;
     private String tipoIdentificacion;
-    private String IPS;
+    private String ips;
     private String especialidad;
     @Column(unique = true)
     private String tarjetaProfesional;

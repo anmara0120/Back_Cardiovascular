@@ -28,7 +28,7 @@ public class Facturador {
     @Column(unique = true)
     private String identificacion;
     private String tipoIdentificacion;
-    private String IPS;
+    private String ips;
     private String especialidad;
     @Column(unique = true)
     private String tarjetaProfesional;

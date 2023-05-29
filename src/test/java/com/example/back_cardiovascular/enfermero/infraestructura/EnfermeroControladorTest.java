@@ -38,7 +38,6 @@ class EnfermeroControladorTest {
 
     /**
      *
-     * @throws Exception
      */
     @Test
     void obtenerEnfermero_OK() throws Exception {
@@ -60,7 +59,6 @@ class EnfermeroControladorTest {
 
     /**
      *
-     * @throws Exception
      */
     @Test
     void guardarPaciente_OK() throws Exception {
@@ -86,7 +84,6 @@ class EnfermeroControladorTest {
 
     /**
      *
-     * @throws Exception
      */
     @Test
     void actualizarPaciente_OK() throws Exception {

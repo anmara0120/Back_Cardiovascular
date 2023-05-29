@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PacienteControladorTest {
+class PacienteControladorTest {
 
     private static final String AUTHORIZATION = "Authorization";
     private static final String TOKEN = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjMiLCJleHAiOjE2ODYwNjUwMzUsIm5vbWJyZSI6IkthcmltIn0.8RityPtqiAhPXYovTXsJKvUGzMekaU4KrMIN15Tazu5TMa8MgnogOR6mIgRspR1z4hO0leVWV7Y4amECefrNTg";
