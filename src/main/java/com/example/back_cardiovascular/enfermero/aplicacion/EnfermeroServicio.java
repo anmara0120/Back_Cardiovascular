@@ -1,9 +1,7 @@
 package com.example.back_cardiovascular.enfermero.aplicacion;
 
-import com.example.back_cardiovascular.enfermero.aplicacion.request.EnfermeroRequest;
 import com.example.back_cardiovascular.enfermero.dominio.IEnfermeroRepositorio;
 import com.example.back_cardiovascular.enfermero.dominio.Enfermero;
-import com.example.back_cardiovascular.authentication.dominio.LoginRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +22,4 @@ public class EnfermeroServicio {
     }
 
     public List<Enfermero> getAll(){return enfermeroRepositorio.findAll();}
-    public Object get(LoginRequest loginRequest){
-        return enfermeroRepositorio.findByEmail(loginRequest.getEmail());
-    }
 }
