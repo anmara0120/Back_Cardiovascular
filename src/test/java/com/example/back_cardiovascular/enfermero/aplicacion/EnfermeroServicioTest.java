@@ -6,13 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
+@Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:sql-scripts/my-test-data.sql")
 class EnfermeroServicioTest {
 
     @Mock
@@ -57,7 +58,7 @@ class EnfermeroServicioTest {
     @Test
     void get_ExistingId_ReturnsEnfermero() {
         // Arrange
-        String id = "999";
+        String id = "1";
         Enfermero enfermero = new Enfermero();
         when(enfermeroRepositorio.findByIdentificacion(id)).thenReturn(enfermero);
 
