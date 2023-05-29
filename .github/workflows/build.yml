@@ -34,9 +34,13 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Grant execute permissions to ./gradlew
         run: chmod +x ./gradlew
+      - name: Build
+        run: ./gradlew build
+      - name: Run project
+        run: ./gradlew bootRun
       - name: Run tests with JaCoCo
         run: ./gradlew test jacocoTestReport
-      - name: Build and analyze
+      - name: Analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -45,4 +49,4 @@ jobs:
           PGDATABASE: ${{ secrets.PGDATABASE }}
           PGUSER: ${{ secrets.PGUSER }}
           PGPASSWORD: ${{ secrets.PGPASSWORD }}
-        run: ./gradlew build sonarqube --info
+        run: ./gradlew sonar --info
