@@ -35,7 +35,7 @@ public class CitaServicio {
         cita.setState(Estado.Scheduled);
         cita.setType(citaRequest.getType());
         cita.setLocation(citaRequest.getLocation());
-        cita.setEnfermero(enfermero.get());
+        cita.setEnfermero(enfermero.orElse(null));
         cita= citaRepositorio.save(cita);
 
         return cita!=null;

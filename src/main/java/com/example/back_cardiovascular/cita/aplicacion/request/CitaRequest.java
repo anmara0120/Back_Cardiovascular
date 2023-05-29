@@ -21,7 +21,7 @@ public class CitaRequest {
      * @return
      */
     public boolean verifyContent (){
-        if (enfermeroId.equals(null) ||  date.isEqual(null)  ) {
+        if (enfermeroId == null ||  date.isEqual(null)  ) {
             return false;
         }
         return true;
