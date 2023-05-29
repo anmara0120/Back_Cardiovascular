@@ -9,6 +9,11 @@ import lombok.Data;
 public class MessageResponse {
     private String message;
 
+    /**
+     *
+     * @param message
+     * @return
+     */
     public String apply(String message) {
         this.message = message;
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();

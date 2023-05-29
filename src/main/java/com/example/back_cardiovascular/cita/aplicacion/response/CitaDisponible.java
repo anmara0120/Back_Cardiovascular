@@ -7,9 +7,18 @@ public class CitaDisponible {
     private String hora;
     private String enfermero;
 
+    /**
+     *
+     * @param hora
+     * @param enfermero
+     */
     public CitaDisponible(String hora, String enfermero) {
         this.hora = hora;
         this.enfermero = enfermero;
     }
+
+    /**
+     *
+     */
     public CitaDisponible(){}
 }

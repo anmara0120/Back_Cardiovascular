@@ -36,6 +36,10 @@ class EnfermeroControladorTest {
     void setUp() {
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void obtenerEnfermero_OK() throws Exception {
         // Arrange
@@ -54,6 +58,10 @@ class EnfermeroControladorTest {
         assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void guardarPaciente_OK() throws Exception {
         // Arrange
@@ -76,6 +84,10 @@ class EnfermeroControladorTest {
         assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void actualizarPaciente_OK() throws Exception {
         // Arrange

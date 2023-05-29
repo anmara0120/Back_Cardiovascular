@@ -37,6 +37,10 @@ public class PacienteControladorTest {
     void setUp() {
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void obtenerPaciente_OK() throws Exception {
         // Arrange
@@ -55,6 +59,10 @@ public class PacienteControladorTest {
         assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void guardarPaciente_OK() throws Exception {
         // Arrange
@@ -77,6 +85,10 @@ public class PacienteControladorTest {
         assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     @Test
     void actualizarPaciente_OK() throws Exception {
         // Arrange

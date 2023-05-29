@@ -28,6 +28,11 @@ public class CitaControlador {
 
     private final CitaServicio citaServicio;
 
+    /**
+     *
+     * @param citaRequest
+     * @return
+     */
     @SneakyThrows
     @PostMapping(path="/crearHorario")
     public @ResponseBody ResponseEntity saveCita (@RequestBody CitaRequest citaRequest) {
@@ -43,6 +48,13 @@ public class CitaControlador {
                 new ResponseEntity<>(message.apply("Message:Usuario ya existente"), HttpStatus.LOCKED);
         return finalResponse;
     }
+
+    /**
+     *
+     * @param identificacion
+     * @param date
+     * @return
+     */
     @SneakyThrows
     @GetMapping(path="/schedule")
     public @ResponseBody ResponseEntity<List<CitaDisponible>> getSchedule (@RequestParam("id") Long identificacion,

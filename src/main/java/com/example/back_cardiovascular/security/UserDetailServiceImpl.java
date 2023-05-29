@@ -14,6 +14,13 @@ import org.springframework.stereotype.Service;
 public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
     private IFacturadorRepositorio facturadorRepositorio;
+
+    /**
+     *
+     * @param email the username identifying the user whose data is required.
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Facturador facturador = facturadorRepositorio.findByEmail(email)

@@ -16,6 +16,10 @@ public class CitaRequest {
     private String type;
     private String location;
 
+    /**
+     *
+     * @return
+     */
     public boolean verifyContent (){
         if (enfermeroId.equals(null) ||  date.isEqual(null)  ) {
             return false;

@@ -15,6 +15,12 @@ public class TokenUtils {
     private final static String ACCESS_TOKEN_SECRET = "HeyWhatsUpMyNiasku3OLIGHlbjy532D3d45F381gv3F5F31f3F85r53uhgUIYFGUfk_2kugJHVFgga41";
     private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 2_592_000L;
 
+    /**
+     *
+     * @param nombre
+     * @param email
+     * @return
+     */
     public static String createToken(String nombre, String email){
         long expirationTime = ACCESS_TOKEN_VALIDITY_SECONDS * 1_000;
         Date expirationDate = new Date(System.currentTimeMillis() + expirationTime);
@@ -30,6 +36,11 @@ public class TokenUtils {
                 .compact();
     }
 
+    /**
+     *
+     * @param token
+     * @return
+     */
     public static UsernamePasswordAuthenticationToken getAuthentication(String token){
         try {
             Claims claims = Jwts.parserBuilder()

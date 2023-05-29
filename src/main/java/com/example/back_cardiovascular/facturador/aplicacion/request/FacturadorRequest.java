@@ -9,6 +9,10 @@ public class FacturadorRequest {
     private String email;
     private String password;
 
+    /**
+     *
+     * @return
+     */
     public boolean verifyContent (){
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
             return false;

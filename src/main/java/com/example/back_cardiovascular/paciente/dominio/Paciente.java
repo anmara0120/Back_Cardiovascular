@@ -12,6 +12,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Entidad paciente, es el que guarda el paciente
+ */
 @Entity
 @Data
 public class Paciente {

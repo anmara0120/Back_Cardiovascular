@@ -23,6 +23,11 @@ public class CitaServicio {
     private final IEnfermeroRepositorio enfermeroRepositorio;
     private final IPacienteRepositorio pacienteRepositorio;
 
+    /**
+     *
+     * @param citaRequest
+     * @return
+     */
     public boolean CrearHorarioCita(CitaRequest citaRequest){
         Optional<Enfermero> enfermero = enfermeroRepositorio.findById(citaRequest.getEnfermeroId());
         Cita cita = new Cita();
@@ -35,16 +40,38 @@ public class CitaServicio {
 
         return cita!=null;
     }
+
+    /**
+     *
+     * @param id
+     * @param date
+     * @return
+     */
     public List<CitaDisponible> getAvailableSchedule(Long id, LocalDate date){
         return citaRepositorio.findAvailableSchedule(id, date);
     }
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Optional<Cita> get(Long id){
         return citaRepositorio.findById(id);
     }
+
+    /**
+     *
+     * @param id
+     */
     public void delete(Long id){
         citaRepositorio.deleteById(id);
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Cita> getAll(){
         return citaRepositorio.findAll();
     }

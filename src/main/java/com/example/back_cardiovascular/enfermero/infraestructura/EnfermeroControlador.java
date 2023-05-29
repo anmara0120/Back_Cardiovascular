@@ -3,7 +3,6 @@ package com.example.back_cardiovascular.enfermero.infraestructura;
 import com.example.back_cardiovascular.enfermero.aplicacion.request.EnfermeroRequest;
 import com.example.back_cardiovascular.enfermero.aplicacion.EnfermeroServicio;
 import com.example.back_cardiovascular.enfermero.dominio.Enfermero;
-import com.example.back_cardiovascular.authentication.dominio.LoginRequest;
 import com.example.back_cardiovascular.response.MessageResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -22,6 +21,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class EnfermeroControlador {
 
     private final EnfermeroServicio service;
+
+    /**
+     *
+     * @param identificacion
+     * @return
+     */
     @SneakyThrows
     @GetMapping(path="/get")
     public @ResponseBody ResponseEntity obtenerEnfermero (@RequestBody String identificacion) {
@@ -38,6 +43,11 @@ public class EnfermeroControlador {
         return finalResponse;
     }
 
+    /**
+     *
+     * @param enfermero
+     * @return
+     */
     @SneakyThrows
     @PostMapping(path="/save")
     public @ResponseBody ResponseEntity guardarEnfermero(@RequestBody Enfermero enfermero) {
