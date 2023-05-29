@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'jacoco'
 	id 'org.springframework.boot' version '3.0.4'
 	id 'io.spring.dependency-management' version '1.1.0'
 	id "org.sonarqube" version "3.5.0.2730"
@@ -34,7 +35,6 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	//runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'com.h2database:h2:2.1.214'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
@@ -44,10 +44,32 @@ tasks.named('test') {
 sonarqube {
 	properties {
 		property "sonar.projectKey", "anmara0120_Back_Cardiovascular"
-    property "sonar.organization", "anmara0120"
-    property "sonar.host.url", "https://sonarcloud.io"
+    	property "sonar.organization", "anmara0120"
+    	property "sonar.host.url", "https://sonarcloud.io"
 		property "sonar.login", "6cfdc1ef0a0b7efcb77479432020de074b0ef981"
+
+		property 'sonar.coverage.jacoco.xmlReportPaths', "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 	}
+}
+
+jacoco {
+	toolVersion = "0.8.7"
+	reportsDir = file("$buildDir/reports/jacoco")
+}
+
+jacocoTestReport {
+	dependsOn test
+	reports {
+		xml.enabled true
+		html.enabled true
+		html.destination file("${buildDir}/reports/jacoco/test/html")
+	}
+}
+
+
+test {
+	finalizedBy jacocoTestReport
+	useJUnitPlatform()
 }
 
 tasks.named('compileJava') {
