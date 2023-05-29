@@ -21,6 +21,7 @@ public class Enfermero {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
     private String nombre;
+
     private String apellidos;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
